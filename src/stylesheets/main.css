@@ -456,6 +456,7 @@ footer {
   bottom: 0;
   left: 0;
   width: 100%;
+  z-index: 30;
 }
 footer hr {
   width: 80%;
@@ -1732,6 +1733,10 @@ svg.transition-scene {
 .dark .GridContainer h2 {
   border-bottom: 2px solid rgb(183, 10, 10);
 }
+.dark .history__perspective {
+  color: #E9C660;
+  background-color: transparent;
+}
 .dark .membersHome {
   background: black;
   color: rgb(254, 0, 0);
@@ -2006,6 +2011,19 @@ Cards
   padding: 5px 16px 10px;
 }
 
+.music__star-wars {
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50px;
+  height: 25px;
+}
+
+.music__sw-container {
+  margin-top: -290px;
+}
+
 .home__card-title {
   font-family: Copperplate Gothic;
   letter-spacing: 3px;
@@ -2255,50 +2273,67 @@ Cards
   text-align: justify;
 }
 
-.perspective h1, .perspective h2, .perspective h3 {
+.history__perspective {
+  position: relative;
+  margin: 0 auto;
+  width: 31.25rem;
+  height: 25em;
+  bottom: 0;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.5em;
+  line-height: 1em;
+  letter-spacing: 0.1em;
+  text-align: justify;
+  overflow: hidden;
+  transform-origin: 50% 91%;
+  transform: perspective(390px) rotateX(25deg);
+  z-index: 1;
+}
+.history__perspective::after {
+  position: absolute;
+  content: " ";
+  left: 0;
+  right: 0;
+  top: 0;
+}
+.history__perspective h1, .history__perspective h2, .history__perspective h3 {
   text-align: center;
 }
-.perspective article {
-  position: relative;
-  top: 2%;
-  margin: 0 auto;
-  display: block;
-  font-family: "helvetica neue";
-  color: #E9C660;
-  width: 31.25rem;
-  font-size: 1.5em;
-  line-height: 1.5em;
-  letter-spacing: 0.1em;
-  transform: rotatex(40deg);
-  -webkit-animation: textMove 75s linear infinite;
-          animation: textMove 75s linear infinite;
-  background: #000;
-  padding: 5rem;
-  border-radius: 1.5rem;
-}
-@media (max-width: 980px) {
-  .perspective article {
-    width: 28.125rem;
-    text-align: center;
-  }
+.history__perspective p {
+  text-align: justify;
+  margin: 0.8em 0;
 }
 @media (max-width: 500px) {
-  .perspective article {
-    width: 23.125rem;
+  .history__perspective {
+    width: 25rem;
   }
 }
 @media (max-width: 390px) {
-  .perspective article {
-    width: 20.625rem;
+  .history__perspective {
+    width: 22rem;
   }
 }
-@-webkit-keyframes textMove {
-  to {
-    top: -1970px;
+.history__perspective .history__animated {
+  position: absolute;
+  top: 100%;
+  padding: 5rem;
+  -webkit-animation: scroll 100s linear infinite;
+  animation: scroll 100s linear infinite;
+}
+@-webkit-keyframes scroll {
+  0% {
+    top: 100%;
+  }
+  100% {
+    top: -370%;
   }
 }
-@keyframes textMove {
-  to {
-    top: -1970px;
+@keyframes scroll {
+  0% {
+    top: 100%;
+  }
+  100% {
+    top: -370%;
   }
 }/*# sourceMappingURL=main.css.map */

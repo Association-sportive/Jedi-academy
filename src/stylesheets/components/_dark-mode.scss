@@ -250,6 +250,12 @@
     }
   }
 
+
+  /// History page 
+  .history__perspective {
+    color: $history;
+    background-color: transparent;
+  }
   //Dark mode for block member on homepage
   .membersHome {
     background: black;

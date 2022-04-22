@@ -2,7 +2,20 @@
 // This file contains styles that are specific to the home page.
 // -----------------------------------------------------------------------------
 
-// Home cards title
+.music__star-wars {
+    overflow:hidden; 
+    position:absolute; 
+    left: 0; 
+    top: 0; 
+    width: 50px; 
+    height: 25px;
+}
+
+.music__sw-container {
+    margin-top: -290px;
+}
+
+// Home cards title 
 
 .home__card-title {
   font-family: Copperplate Gothic;
